@@ -1,0 +1,107 @@
+body {
+  font-family: sans-serif;
+  margin: 20px;
+  background-color: #f0f8ff;
+}
+
+header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 5px; 
+}
+
+.logo{
+  background-image: url(../logo.jpg);
+  background-size: cover;
+  min-width: 60px;          
+  min-height: 60px; 
+
+  border-radius: 12px;
+  margin-left: 20px;
+}
+
+.title-text{
+  font-size: 40px;
+  font-weight: bold; 
+}
+
+.btn-area {
+  gap: 15px;
+  margin-bottom: 1px;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 10px 30px;
+  border: none;
+  background-color: #3c8dbc;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #367fa9;
+}
+
+.time-range {
+  display: flex;
+  justify-content: flex-end; 
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.card-region {
+  /* 將卡片網格排列 */
+  display: grid;
+  /* grid-template-columns: 重複(次數, 每一列寬度)  1fr:相對單位; */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: relative; 
+}
+
+.card::after {
+  content: ''; 
+  background-color: #3c8dbc;
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0; 
+  transition: opacity 0.3s ease-in-out; /* 過度效果 */
+}
+
+.card:hover::after {
+  opacity: 1; /* 悬停时显示伪元素 */
+}
+
+.card:hover {
+  transition: 1.5s;
+  transform: rotateY(180deg);
+}
+
+.icon img {
+  width: 80px;
+  height: 80px;
+}
